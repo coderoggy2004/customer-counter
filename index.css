@@ -1,0 +1,137 @@
+/* Apply basic styling to the body for a clean look */
+body {
+    font-family: 'Quicksand'; /* Using Inter font for a modern feel */
+    color: #333; /* Dark grey text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    cursor: pointer;
+    background-image: url("subway.webp");
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Style the main heading */
+h1 {
+    color: #2c3e50; /* Darker blue-grey for heading */
+    font-size: 2.5rem; /* Larger font size for prominence */
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background for the heading */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style the count display */
+h2#count-el {
+    font-size: 4rem; /* Very large font size for the count */
+    color: #c2545f; /* A vibrant blue for the count */
+    background-color: #ffffff; /* White background for the count */
+    padding: 20px 40px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    min-width: 150px; /* Ensure a minimum width for consistent appearance */
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* Smooth transition for potential future interactions */
+}
+
+/* Optional: Add a hover effect for the count */
+h2#count:hover {
+    transform: translateY(-3px); /* Lift slightly on hover */
+}
+
+/* Style the increment button */
+button#increment-btn {
+    background-color: #8f5aad; /* Green background for the button */
+    color: white; /* White text */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px; /* Rounded corners for the button */
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+    font-family: "Quicksand";
+}
+
+button#increment-btn:hover {
+    background-color: #ab609a; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+button#increment-btn:active {
+    background-color: #ab609a; /* Even darker green when clicked */
+    transform: translateY(0); /* Press down effect */
+}
+
+/* Style the save button */
+button#save-btn {
+    background-color: #8f5aad; /* Green background for the button */
+    color: white; /* White text */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px; /* Rounded corners for the button */
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+    font-family: "Quicksand";
+    
+}
+
+
+button#save-btn:hover {
+    background-color: #ab609a; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+button#savc-btn:active {
+    background-color: #ab609a; /* Even darker green when clicked */
+    transform: translateY(0); /* Press down effect */
+}
+
+/* Style the paragraph */
+p#save-el {
+    color: #056059; /* Darker blue-grey for heading */
+    font-size: 1.2rem; /* Larger font size for prominence */
+    margin-bottom: 15px; /* Space below the heading */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background for the heading */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+        padding: 8px 15px;
+    }
+
+    h2#count {
+        font-size: 3rem;
+        padding: 15px 30px;
+    }
+
+    p#save-el {
+        font-size: 3rem;
+        padding: 15px 30px;
+    }
+
+    button#increment-btn {
+        font-size: 1rem;
+    }
+
+    button#save-btn {
+        font-size: 1rem;
+    }
+}
