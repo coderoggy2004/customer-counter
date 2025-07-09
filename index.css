@@ -1,189 +1,135 @@
-/* Import Google Fonts - Quicksand and Inter for a modern feel */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Apply basic styling to the body for a clean look */
 body {
-    font-family: 'Inter', 'Quicksand', sans-serif; /* Using Inter font with Quicksand as a fallback */
-    color: #333; /* Dark grey text color */
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensure it takes full viewport height */
+    min-height: 100vh;
     margin: 0;
-    padding: 1.25rem; /* Add some padding around the content (20px) */
-    box-sizing: border-box; /* Include padding in element's total width and height */
+    padding: 20px;
     cursor: pointer;
     background-image: url("subway.webp");
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    height: 100vh; /* Ensure it takes full viewport height */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-size: cover;
+    background-position: center;
 }
 
-/* Container for content to limit width on larger screens */
-.container {
-    max-width: 90%; /* Max width for content */
-    width: 100%; /* Take full width within max-width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Space between elements (24px) */
-    padding: 1.5rem; /* Padding inside the container (24px) */
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-    border-radius: 1rem; /* Rounded corners (16px) */
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
-}
-
-/* Style the main heading */
+/* Heading Styling */
 h1 {
-    color: #2c3e50; /* Darker blue-grey for heading */
-    font-size: 2.5rem; /* Larger font size for prominence (40px) */
-    margin-bottom: 0.9375rem; /* Space below the heading (15px) */
+    color: #2c3e50;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 15px;
     text-align: center;
-    padding: 0.625rem 1.25rem; /* Padding (10px 20px) */
-    background-color: #ffffff; /* White background for the heading */
-    border-radius: 0.75rem; /* Rounded corners (12px) */
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: fit-content; /* Adjust width to content */
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the count display */
+/* Count Display */
 h2#count-el {
-    font-size: 4rem; /* Very large font size for the count (64px) */
-    color: #c2545f; /* A vibrant red for the count */
-    background-color: #ffffff; /* White background for the count */
-    padding: 1.25rem 2.5rem; /* Padding (20px 40px) */
-    border-radius: 0.9375rem; /* More rounded corners (15px) */
-    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15); /* More pronounced shadow */
-    min-width: 9.375rem; /* Ensure a minimum width for consistent appearance (150px) */
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: #c2545f;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    min-width: 150px;
     text-align: center;
-    transition: transform 0.2s ease-in-out; /* Smooth transition for potential future interactions */
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Optional: Add a hover effect for the count */
 h2#count-el:hover {
-    transform: translateY(-0.1875rem); /* Lift slightly on hover (3px) */
+    transform: translateY(-3px);
 }
 
-/* Style the buttons */
-button {
-    background-color: #8f5aad; /* Purple background for the button */
-    color: white; /* White text */
-    padding: 0.9375rem 1.875rem; /* Padding (15px 30px) */
+/* Buttons Common */
+button#increment-btn,
+button#save-btn {
+    background-color: #8f5aad;
+    color: white;
+    padding: 15px 30px;
     border: none;
-    border-radius: 0.5rem; /* Rounded corners for the button (8px) */
-    font-size: 1.2rem; /* Font size (19.2px) */
+    border-radius: 8px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     cursor: pointer;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
-    font-family: "Inter", "Quicksand", sans-serif;
-    margin: 0.5rem; /* Space between buttons */
-    width: 100%; /* Take full width on small screens */
-    max-width: 15rem; /* Max width for buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: "Quicksand", sans-serif;
+    margin: 10px;
+    width: fit-content;
 }
 
-button:hover {
-    background-color: #ab609a; /* Darker purple on hover */
-    transform: translateY(-0.125rem); /* Slight lift on hover (2px) */
+button#increment-btn:hover,
+button#save-btn:hover {
+    background-color: #ab609a;
+    transform: translateY(-2px);
 }
 
-button:active {
-    background-color: #ab609a; /* Even darker purple when clicked */
-    transform: translateY(0); /* Press down effect */
+button#increment-btn:active,
+button#save-btn:active {
+    background-color: #ab609a;
+    transform: translateY(0);
 }
 
-/* Style the paragraph */
+/* Save Paragraph */
 p#save-el {
-    color: #056059; /* Darker blue-grey for heading */
-    font-size: 1.2rem; /* Larger font size for prominence (19.2px) */
-    margin-bottom: 0.9375rem; /* Space below the heading (15px) */
-    font-weight: bold;
+    color: #056059;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-top: 20px;
     text-align: center;
-    padding: 0.625rem 1.25rem; /* Padding (10px 20px) */
-    background-color: #ffffff; /* White background for the heading */
-    border-radius: 0.75rem; /* Rounded corners (12px) */
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: fit-content; /* Adjust width to content */
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
-/* Responsive adjustments for small screens (e.g., mobile phones) */
-@media (max-width: 600px) {
+/* Responsive Layout */
+@media (max-width: 768px) {
     body {
-        padding: 1rem; /* Reduce overall padding */
+        padding: 15px;
     }
 
-    .container {
-        padding: 1rem; /* Reduce container padding */
-        gap: 1rem; /* Reduce gap between elements */
-    }
-
-    h1 {
-        font-size: 1.8rem; /* Smaller font size for heading */
-        padding: 0.5rem 0.9375rem; /* Smaller padding */
+    button#increment-btn,
+    button#save-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
     }
 
     h2#count-el {
-        font-size: 3rem; /* Smaller font size for count */
-        padding: 0.9375rem 1.875rem; /* Smaller padding */
-        min-width: 7.5rem; /* Smaller min-width */
-    }
-
-    p#save-el {
-        font-size: 1rem; /* Smaller font size for paragraph */
-        padding: 0.5rem 0.9375rem; /* Smaller padding */
-    }
-
-    button {
-        font-size: 1rem; /* Smaller font size for buttons */
-        padding: 0.75rem 1.5rem; /* Smaller padding */
-        margin: 0.3rem; /* Smaller margin between buttons */
-        max-width: 100%; /* Ensure buttons take full width */
+        padding: 15px 30px;
     }
 }
 
-/* Responsive adjustments for medium screens (e.g., tablets) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        padding: 1.5rem; /* Medium overall padding */
-    }
-
-    .container {
-        padding: 1.5rem; /* Medium container padding */
-        gap: 1.25rem; /* Medium gap between elements */
-    }
-
+@media (max-width: 480px) {
     h1 {
-        font-size: 2.2rem; /* Slightly smaller font size for heading */
-        padding: 0.75rem 1.5rem; /* Medium padding */
+        font-size: 1.6rem;
+        padding: 8px 12px;
     }
 
     h2#count-el {
-        font-size: 3.5rem; /* Medium font size for count */
-        padding: 1.25rem 2.25rem; /* Medium padding */
-        min-width: 8.5rem; /* Medium min-width */
+        font-size: 2.5rem;
+        padding: 12px 20px;
+    }
+
+    button#increment-btn,
+    button#save-btn {
+        width: 100%;
+        font-size: 0.95rem;
     }
 
     p#save-el {
-        font-size: 1.1rem; /* Medium font size for paragraph */
-        padding: 0.75rem 1.5rem; /* Medium padding */
-    }
-
-    button {
-        font-size: 1.1rem; /* Medium font size for buttons */
-        padding: 0.875rem 1.75rem; /* Medium padding */
-        margin: 0.4rem; /* Medium margin between buttons */
-        max-width: 18rem; /* Slightly larger max width for buttons */
-    }
-}
-
-/* Responsive adjustments for large screens (e.g., desktops) */
-@media (min-width: 1025px) {
-    .container {
-        max-width: 40rem; /* Limit container width on very large screens */
-    }
-    button {
-        max-width: 15rem; /* Maintain max width for buttons */
+        font-size: 1rem;
+        padding: 8px 15px;
     }
 }
