@@ -16,8 +16,10 @@ body {
     margin: 0;
     padding: 20px;
     cursor: pointer;
-    background-color:lavender;
-    /*background-image: url("subway.webp");*/
+    background-image: url("subway.webp");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
 }
 
 /* Heading Styling */
