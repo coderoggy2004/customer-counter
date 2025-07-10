@@ -1,8 +1,13 @@
+html{
+    touch-action: manipulation;
+}
+
 /* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -72,6 +77,12 @@ button#increment-btn:hover,
 button#save-btn:hover {
     background-color: #ab609a;
     transform: translateY(-2px);
+}
+
+button {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button#increment-btn:active,
