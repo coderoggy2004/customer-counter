@@ -125,7 +125,7 @@ p#save-el {
 
     button#increment-btn,
     button#save-btn {
-        width: 100%;
+        width: 50%;
         font-size: 0.95rem;
     }
 
